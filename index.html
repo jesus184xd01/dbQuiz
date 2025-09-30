@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta Dinámica - Respondiente y Encuestado</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Encuesta Dinámica</h1>
+
+<!-- Información del respondiente -->
+<h2>Información del Respondiente</h2>
+<form id="formRespondiente">
+    <label for="nombreRespondiente">Nombre:</label>
+    <input type="text" id="nombreRespondiente" name="nombreRespondiente" required>
+    <br><br>
+
+    <label for="apellidoRespondiente">Apellido:</label>
+    <input type="text" id="apellidoRespondiente" name="apellidoRespondiente" required>
+    <br><br>
+
+    <label for="emailRespondiente">Email:</label>
+    <input type="email" id="emailRespondiente" name="emailRespondiente" required>
+    <br><br>
+</form>
+
+<hr>
+
+<!-- Información del encuestado -->
+<h2>Información del Encuestado</h2>
+<label for="encuestado">Seleccione el encuestado:</label>
+<select id="encuestado" onchange="actualizarFormulario()">
+    <option value="">--Seleccione--</option>
+    <option value="1">Juan Pérez</option>
+    <option value="2">María López</option>
+    <option value="3">Carlos Sánchez</option>
+</select>
+<div id="infoEncuestado"></div>
+
+<hr>
+
+<!-- Formulario de la encuesta -->
+<h2>Formulario de Encuesta</h2>
+<form id="formEncuesta" action="procesar.php" method="POST">
+    <div id="preguntasContainer">
+        <!-- Preguntas dinámicas aparecerán aquí -->
+    </div>
+    <br>
+    <input type="submit" value="Enviar Encuesta">
+</form>
+
+<hr>
+
+<!-- Resultados del encuestado -->
+<h2>Resultados del Encuestado</h2>
+<canvas id="graficaResultados" width="400" height="200"></canvas>
+
+<!-- JS separado -->
+<script src="script.js"></script>
+</body>
+</html>
